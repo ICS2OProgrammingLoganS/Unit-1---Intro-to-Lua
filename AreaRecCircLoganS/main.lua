@@ -5,10 +5,10 @@
 
 --Create my local variables
 local areaText
-local textSize = 50
+local textSize = 37
 local myRectangle
-local widthOfRectangle = 350
-local heightOfRectangle = 200
+local widthOfRectangle = 290
+local heightOfRectangle = 190
 local areaOfRectangleh
 
 -- set the background colour
@@ -29,4 +29,20 @@ myRectangle:setFillColor (0/255, 255/255, 0/255)
 
 myRectangle:setStrokeColor (255/255, 0/255, 0/255)
 
-areaOfRectangle = widthOfRectangle
+areaOfRectangle = widthOfRectangle * heightOfRectangle
+
+areaText = display.newText ("The Area of this Rectangle with a width of \n" 
+	.. widthOfRectangle .. " and a height of \n" 
+	.. heightOfRectangle .. " is " .. areaOfRectangle .. " pixels².", 0, 0, "Times New Roman", textSize)
+
+areaText.x = 680
+areaText.y = 150
+
+local areaCircText
+local circTextSize = 37
+local circRadius = 150
+local PI = 3.14
+local areaOfCirc
+local myCirc
+
+myCirc = display.newCircle (display.contentWidth*3/4)
