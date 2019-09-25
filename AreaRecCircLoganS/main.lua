@@ -45,4 +45,15 @@ local PI = 3.14
 local areaOfCirc
 local myCirc
 
-myCirc = display.newCircle (display.contentWidth*3/4)
+myCirc = display.newCircle (825, 600, 150)
+
+myCirc:setFillColor (0/255, 255/255, 0/255)
+
+myCirc.strokeWidth =30
+
+myCirc:setStrokeColor (255/255, 0/255, 0/255)
+
+areaOfCirc = circRadius * PI
+
+areaCircText = display.newText ("The are of the Circle with a radius of \n " 
+	.. circRadius .. "Multiplied by \n" .. PI .. " is " .. areaOfCirc .. "Pixels²", 0, 0, "Times New Roman", textsize)
