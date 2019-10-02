@@ -55,5 +55,5 @@ myCirc:setStrokeColor (255/255, 0/255, 0/255)
 
 areaOfCirc = circRadius * PI
 
-areaCircText = display.newText ("The are of the Circle with a radius of \n " 
-	.. circRadius .. "Multiplied by \n" .. PI .. " is " .. areaOfCirc .. "Pixels²", 0, 0, "Times New Roman", textsize)
+areaCircText = display.newText ("The area of the Circle with a radius of \n " 
+	.. circRadius .. " Multiplied by \n" .. PI .. " is " .. areaOfCirc .. " Pixels²", 500, 400, "Times New Roman", 50)
