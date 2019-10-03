@@ -27,3 +27,9 @@ textObject.x = display.contentWidth/2
 textObject.y = display.contentHeight/2
 textObject:setTextColor (1, 1, 0)
 textObject.isVisible = false
+
+-- Function: BlackButtonListener
+-- Input: Touch Listener
+-- Output: none
+-- Descrption: when black button touched, green button appear and black button disappear
+local
