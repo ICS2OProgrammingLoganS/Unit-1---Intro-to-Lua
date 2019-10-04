@@ -4,9 +4,6 @@
 -- This program moves a spaceship 
   -- around the screen and maybe spins, 
   --changes direction, and much more
-
-  display.setStatusBar (display.HiddenStatusBar)
-
-  scrollSpeed = 3
-
-  local backgroundImage = display.newImageRect ("Images/Space.png", 2048, 1536)
+display.setStatusBar (display.hiddenStatusBar)
+scrollSpeed = 3
+local backgroundImage = display.newImageRect("Images/background.png", 2048, 1536)
