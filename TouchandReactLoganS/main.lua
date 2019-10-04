@@ -32,4 +32,30 @@ textObject.isVisible = false
 -- Input: Touch Listener
 -- Output: none
 -- Descrption: when black button touched, green button appear and black button disappear
-local
+local function BlackButtonListener(touch)
+	if (touch.phase == "began") then
+		blackButton.isVisible = false
+		greenButton.isVisible = true
+		textObject.isVisible = true
+	end
+
+	if (touch.phase = "ended") then
+		blackButton.isVisible = true
+		greenButton.isVisible = false
+		textObject.isVisible = false
+	end
+end
+
+local function GreenButtonListener(touch)
+	if (touch.phase == "began") then
+		greenButton.isVisible = true
+		blackButton.isVisible = false
+		textObject.isVisible = false
+	end
+
+	if (touch.phase = "ended") then
+		blackButton.isVisible = false
+		greenButton.isVisible = true
+		textObject.isVisible = true
+	end
+end
