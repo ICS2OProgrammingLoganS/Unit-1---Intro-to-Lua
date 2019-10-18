@@ -23,28 +23,19 @@ local incorrectObject
 local points = 0
 local pointsText
 local randomOperator
-local totalSeconds = 5
-local secondsLeft = 5
-local clockText
-local countdownTimer
-local lives = 4
-local heart1
-local heart2
-local heart3
-local heart4
-local gameOver
 
 ----------------------------------------------------------------------------
 --SOUNDS
 ----------------------------------------------------------------------------
 
+audio.play (backgroundMusic, {loops = -1})
 local incorrectSound = audio.loadSound ("Sounds/Wrong Buzzer Sound Effect.mp3")
 local incorrectSoundChannel
 local correctSound = audio.loadSound ("Sounds/Correct Answer Sound Effect.mp3")
 local correctSoundChannel
 
 ----------------------------------------------------------------------------
---LOCAL FUNCTIONS
+--FUNCTIONS
 ----------------------------------------------------------------------------
 
 local function AskQuestion()
@@ -104,7 +95,7 @@ local function HideIncorrect()
 	AskQuestion()
 end
 
-local function NumericFieldListener()
+local function NumericFieldListener(event)
 	-- User begins editing "numericfield"
 	if (event.phase == "began") then
 
@@ -134,41 +125,6 @@ local function NumericFieldListener()
 	end
 end
 
-local function UpdateTime()
-
-	--decrement the number of seconds Left
-	secondsLeft = seconds - 1
-
-	--display the number of seconds left in the clock object
-	clockText.text = secondsLeft .. ""
-
-	if (secondsLeft == 0) then
-		--reset the number of seconds left
-		secondsLeft = totalSeconds
-		lives = lives - 1
-
-		-- *** IF THERE ARE NO LIVES LEFT, PLAY A LOSE SOUND SHOW A YOU LOSE IMAGE
-		--AND CANCEL THE TIMER REMOVE THE THIRD FOURTH HEART BY MAKING IT INVISIBLE
-		if (lives == 3) then
-			heart4.isVisible = false
-		elseif (lives == 2) then
-			heart3.isVisible = false
-		elseif (lives == 1) then
-			heart2.isvisible = false
-		elseif (lives  == 0) then
-			heart4.isVisible = false
-			display
--- *** CALL THE FUNCTION TO ASK A NEW QUESTION
-	AskQuestion()
-    end 
-end
-
--- function that calls the timer
-local function StartTimer()
-	--create a countdown timer that loops infinitely
-	countdownTimer = timer.performWithDelay (1000, UpdateTime, 0)
-end
-
 ----------------------------------------------------------------------------
 --OBJECT CREATION
 ----------------------------------------------------------------------------
@@ -196,22 +152,6 @@ incorrectObject.isVisible = false
 
 -- display the amount of points as a text object
 pointsText = display.newText ("Points: " .. points, display.contentWidth/3, display.contentHeight/3, nil, 50)
-
-heart1 = display.newImageRect ("Images/heart.png", 100, 100)
-heart1.x = display.contentWidth * 7 / 8
-heart1.y = display.contentHeight * 1 / 7
-
-heart2 = display.newImageRect ("Images/heart.png", 200, 200)
-heart2.x = display.contentWidth * 6 / 8
-heart2.y = display.contentHeight * 1 / 7
-
-heart3 = display.newImageRect ("Images/heart.png", 300, 300)
-heart3.x = display.contentWidth * 5 / 8
-heart3.y = display.contentHeight * 1 / 7
-
-heart4 = display.newImageRect ("Images/heart.png", 400, 400)
-heart4.x = display.contentWidth * 4 / 8
-heart4.y = display.contentHeight * 1 / 7
 
 ----------------------------------------------------------------------------------------------------------------------
 --FUNCTION CALLS

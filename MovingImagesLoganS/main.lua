@@ -1,14 +1,7 @@
 -- Title: MovingImages
 -- Name: Logan S
 -- Course: ICS2O/3C
-<<<<<<< HEAD
--- This program moves a spaceship 
-  -- around the screen and maybe spins, 
-  --changes direction, and much more
-display.setStatusBar (display.hiddenStatusBar)
-scrollSpeed = 3
-local backgroundImage = display.newImageRect("Images/background.png", 2048, 1536)
-=======
+
 -- This program displays an image that moves across the screen.
 
 -- hide the status bar
@@ -67,4 +60,4 @@ end
 
 -- MoveShip will be called over and over again
 Runtime:addEventListener("enterFrame", MoveShip)
->>>>>>> adb682a859223971c59d69d01c0fcdcff5d8f15b
+
