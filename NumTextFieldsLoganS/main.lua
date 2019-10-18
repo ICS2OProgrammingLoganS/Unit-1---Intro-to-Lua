@@ -104,7 +104,7 @@ local function HideIncorrect()
 	AskQuestion()
 end
 
-local function NumericFieldListener()
+local function NumericFieldListener(event)
 	-- User begins editing "numericfield"
 	if (event.phase == "began") then
 
@@ -130,6 +130,15 @@ local function NumericFieldListener()
 			incorrectSoundChannel = audio.play (incorrectSound)
 			incorrectObject.isVisible = true
 			timer.performWithDelay (2000, HideIncorrect)
+			if (lives == 3) then
+				heart1.isVisible = false
+			elseif (lives == 2) then
+				heart3.isVisible = false
+			elseif (lives == 1) then
+				heart2.isvisible = false
+			elseif (lives  == 0) then
+				heart4.isVisible = false
+			end
 		end
 	end
 end
@@ -157,9 +166,9 @@ local function UpdateTime()
 			heart2.isvisible = false
 		elseif (lives  == 0) then
 			heart4.isVisible = false
-			display
+		end
 -- *** CALL THE FUNCTION TO ASK A NEW QUESTION
-	AskQuestion()
+		AskQuestion()
     end 
 end
 
@@ -212,6 +221,8 @@ heart3.y = display.contentHeight * 1 / 7
 heart4 = display.newImageRect ("Images/heart.png", 100, 100)
 heart4.x = display.contentWidth * 4 / 8
 heart4.y = display.contentHeight * 1 / 7
+
+clockText 
 
 ----------------------------------------------------------------------------------------------------------------------
 --FUNCTION CALLS
