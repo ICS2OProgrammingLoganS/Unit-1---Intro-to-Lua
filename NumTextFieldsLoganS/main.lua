@@ -23,8 +23,8 @@ local incorrectObject
 local points = 0
 local pointsText
 local randomOperator
-local totalSeconds = 5
-local secondsLeft = 5
+local totalSeconds = 15
+local secondsLeft = 15
 local clockText
 local countdownTimer
 local lives = 4
@@ -201,15 +201,15 @@ heart1 = display.newImageRect ("Images/heart.png", 100, 100)
 heart1.x = display.contentWidth * 7 / 8
 heart1.y = display.contentHeight * 1 / 7
 
-heart2 = display.newImageRect ("Images/heart.png", 200, 200)
+heart2 = display.newImageRect ("Images/heart.png", 100, 100)
 heart2.x = display.contentWidth * 6 / 8
 heart2.y = display.contentHeight * 1 / 7
 
-heart3 = display.newImageRect ("Images/heart.png", 300, 300)
+heart3 = display.newImageRect ("Images/heart.png", 100, 100)
 heart3.x = display.contentWidth * 5 / 8
 heart3.y = display.contentHeight * 1 / 7
 
-heart4 = display.newImageRect ("Images/heart.png", 400, 400)
+heart4 = display.newImageRect ("Images/heart.png", 100, 100)
 heart4.x = display.contentWidth * 4 / 8
 heart4.y = display.contentHeight * 1 / 7
 
