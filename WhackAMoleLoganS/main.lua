@@ -12,10 +12,15 @@ local background = display.newImageRect("Images/Garden.jpg", 2048, 1536)
 
 local points = 0
 local pointsText
+local youWinImage = display.newImageRect("Images/youwin.png", 1460, 790)
 
+youWinImage.x = display.contentCenterX
+youWinImage.y = display.contentCenterY
 
+youWinImage.width = display.contentWidth/15
+youWinImage.width = display.contentHeight/10
 
-
+youWinImage.isVisible = false
 
 --creating mole
 local moleObject = display.newImage("Images/mole.png")
@@ -37,7 +42,7 @@ function MolePopUp()
 	moleObject.y = math.random (0, display.contentHeight)
 
 	moleObject.isVisible = true
-	timer.performWithDelay(500, MoleHide)
+	timer.performWithDelay(700, MoleHide)
 end
 
 function PopUpDelay()
@@ -61,8 +66,13 @@ function WhackedMole(event)
 		points = points + 1
 		pointsText.text = "Moles Whacked:" .. points .. ""
 
- end
-
+		if (points == 10) then
+			pointsText.isVisible = false
+			youWinImage.isVisible = true
+			moleObject.isVisible = false
+			background.isVisible = false
+		end
+	end
 end
 
 pointsText = display.newText ("Moles Whacked: " .. points, display.contentWidth/4.8, display.contentHeight/30, nil, 50)
