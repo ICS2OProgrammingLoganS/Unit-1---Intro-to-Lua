@@ -138,6 +138,7 @@ local function NumericFieldListener(event)
 			incorrectObject.isVisible = true
 			timer.performWithDelay (2000, HideIncorrect)
 			if (lives == 3) then
+
 				heart4.isVisible = false
 				incorrectSoundChannel = audio.play (incorrectSound)
 			elseif (lives == 2) then
@@ -152,6 +153,14 @@ local function NumericFieldListener(event)
 				numericField.isVisible = false
 				gameOverSoundChannel = audio.play (gameOverSound)
 				clockText.isVisible = false
+				heart1.isVisible = false
+			elseif (lives == 2) then
+				heart3.isVisible = false
+			elseif (lives == 1) then
+				heart2.isvisible = false
+			elseif (lives  == 0) then
+				heart4.isVisible = false
+
 			end
 		end
 	end
@@ -186,8 +195,9 @@ local function UpdateTime()
 			numericField.isVisible = false
 			clockText.isVisible = false
 		end
-	-- *** CALL THE FUNCTION TO ASK A NEW QUESTION
-	AskQuestion()
+	
+		-- *** CALL THE FUNCTION TO ASK A NEW QUESTION
+		AskQuestion()
     end 
 end
 
@@ -241,12 +251,14 @@ heart4 = display.newImageRect ("Images/heart.png", 100, 100)
 heart4.x = display.contentWidth * 4 / 8
 heart4.y = display.contentHeight * 1 / 7
 
+
 gameOverScreen = display.newImageRect ("Images/gameOver.png", 1536, 768)
 gameOverScreen.x = display.contentWidth/2
 gameOverScreen.y = display.contentHeight/2
 gameOverScreen.isVisible = false
 
 clockText = display.newText ("Time Left: " .. secondsLeft, display.contentWidth/7, display.contentHeight/7, nil, 50)
+
 
 ----------------------------------------------------------------------------------------------------------------------
 --FUNCTION CALLS
