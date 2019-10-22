@@ -13,7 +13,7 @@ scrollSpeed = 3
 -- background image with width and height
 local backgroundImage = display.newImageRect("Images/background.png", 2048, 1536)
 
--- Charecter image with width and height
+-- Character image with width and height
 local beetleship = display.newImageRect("Images/beetleship.png", 200, 200)
 
 -- set the image to be transparent
@@ -37,15 +37,16 @@ rocketship.y = 0
 -- Input: this function accepts an event listener
 -- Output: none
 -- Desciption: This function adds the scroll speed to the y-value of the rocketship
-local function MoveRocketShip(event)
+local function MoveSquidward(event)
 -- add the scroll speed to the x-value of the ship
 rocketship.y = rocketship.y + scrollSpeed
+
 -- change the transparency of the ship every time it moves so fast that it fades out
 rocketship.alpha = rocketship.alpha + 0.01
 end
 
 -- MoveRocketShip will be called over and over again
-Runtime:addEventListener("enterFrame", MoveRocketShip)
+Runtime:addEventListener("enterFrame", MoveSquidward)
 
 -- Function: MoveShip
 -- Input: this function accepts an event listener
