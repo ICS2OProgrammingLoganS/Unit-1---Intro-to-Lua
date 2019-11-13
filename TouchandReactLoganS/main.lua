@@ -54,8 +54,8 @@ local function GreenButtonListener(touch)
 	end
 
 	if (touch.phase == "ended") then
-		blackButton.isVisible = false
-		greenButton.isVisible = true
-		textObject.isVisible = true
+		blackButton.isVisible = true
+		greenButton.isVisible = false
+		textObject.isVisible = false
 	end
 end
