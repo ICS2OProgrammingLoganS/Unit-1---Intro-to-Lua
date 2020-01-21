@@ -14,24 +14,29 @@ display.setDefault("background", 121/255, 199/255, 124/255)
 
 local questionObject
 local correctObject
+
 local numericField
 local randomNumber1
 local randomNumber2
 local userAnswer
 local correctAnswer = 0
 local incorrectObject
+
 local points = 0
 local pointsText
 local randomOperator
+
 local totalSeconds = 15
 local secondsLeft = 15
 local clockText
 local countdownTimer
+
 local lives = 4
 local heart1
 local heart2
 local heart3
 local heart4
+
 local gameOverScreen
 
 
